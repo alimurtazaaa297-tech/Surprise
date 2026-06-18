@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Nebo!</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg, #ffe0f0 0%, #ffd6ea 40%, #fce4ec 100%);
+      font-family: Georgia, serif;
+      overflow: hidden;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(5deg); }
+    }
+    @keyframes floatAlt {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(-5deg); }
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.12); }
+      50% { transform: scale(1.05); }
+      75% { transform: scale(1.15); }
+    }
+    @keyframes sparkle {
+      0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+      50% { opacity: 0.4; transform: scale(0.7) rotate(45deg); }
+    }
+    @keyframes candleFlicker {
+      0%, 100% { transform: scaleY(1) scaleX(1); opacity: 1; }
+      33% { transform: scaleY(1.3) scaleX(0.8); opacity: 0.8; }
+      66% { transform: scaleY(0.8) scaleX(1.2); opacity: 0.9; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .floatie {
+      position: fixed;
+      font-size: 22px;
+      pointer-events: none;
+      user-select: none;
+    }
+    .f1  { top: 5%;  left: 6%;   animation: float    3.2s ease-in-out infinite; }
+    .f2  { top: 8%;  right: 8%;  animation: floatAlt 2.8s ease-in-out infinite; }
+    .f3  { top: 22%; left: 3%;   animation: float    3.6s ease-in-out infinite 0.5s; font-size:16px; }
+    .f4  { top: 18%; right: 4%;  animation: floatAlt 3s   ease-in-out infinite 1s;   font-size:18px; }
+    .f5  { bottom: 18%; left: 5%;  animation: float    2.9s ease-in-out infinite 0.3s; }
+    .f6  { bottom: 10%; right: 6%; animation: floatAlt 3.4s ease-in-out infinite 0.7s; }
+    .f7  { bottom: 28%; left: 10%; animation: float    3.1s ease-in-out infinite 1.2s; font-size:14px; }
+    .f8  { top: 40%; right: 3%;   animation: floatAlt 2.7s ease-in-out infinite 0.2s; font-size:15px; }
+    .f9  { top: 55%; left: 4%;    animation: float    3.3s ease-in-out infinite 0.8s; font-size:13px; }
+    .f10 { bottom: 5%; left: 20%; animation: floatAlt 3s   ease-in-out infinite 0.4s; font-size:16px; }
+    .f11 { bottom: 5%; right: 20%;animation: float    2.8s ease-in-out infinite 1.1s; font-size:14px; }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 32px 28px 36px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(220, 80, 130, 0.18);
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 0.7s ease-out;
+    }
+
+    .icon-wrap {
+      animation: heartbeat 1.8s ease-in-out infinite;
+      display: inline-block;
+      font-size: 52px;
+      line-height: 1;
+    }
+    .cake-wrap {
+      font-size: 48px;
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+      margin-left: 4px;
+    }
+    .icons-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #c2185b;
+      margin: 0 0 6px;
+      line-height: 1.25;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #e91e8c;
+      margin: 0 0 20px;
+      letter-spacing: 0.04em;
+      opacity: 0.75;
+      font-family: Arial, sans-serif;
+    }
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, #f48fb1, #c2185b);
+      border-radius: 2px;
+      margin: 0 auto 20px;
+    }
+    .message {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #5a3045;
+      text-align: left;
+      margin: 0;
+      padding: 0 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .candle {
+      display: inline-block;
+      animation: candleFlicker 0.6s ease-in-out infinite;
+    }
+    .sp1 { animation: sparkle 1.4s ease-in-out infinite;        display: inline-block; font-size: 16px; }
+    .sp2 { animation: sparkle 1.4s ease-in-out infinite 0.5s;   display: inline-block; font-size: 16px; }
+    .sp3 { animation: sparkle 1.4s ease-in-out infinite 1s;     display: inline-block; font-size: 16px; }
+
+    .footer-sparkles {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating background emojis -->
+  <div class="floatie f1">🎀</div>
+  <div class="floatie f2">🌸</div>
+  <div class="floatie f3">💖</div>
+  <div class="floatie f4">✨</div>
+  <div class="floatie f5">🎊</div>
+  <div class="floatie f6">🎁</div>
+  <div class="floatie f7">💝</div>
+  <div class="floatie f8">🌷</div>
+  <div class="floatie f9">🎈</div>
+  <div class="floatie f10">🧁</div>
+  <div class="floatie f11">🎉</div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="icons-row">
+      <div class="icon-wrap">💖</div>
+      <div class="cake-wrap">🎂</div>
+      <div class="icon-wrap">💖</div>
+    </div>
+
+    <h1>Happy Birthday,<br>Dear Nabila Anni! 🎉</h1>
+    <p class="subtitle">
+      <span class="candle">🕯</span> Wishing you the most magical day <span class="candle">🕯</span>
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="message">
+      To the beautiful laddy — happy birthday, my dearest khalla! 🌸
+      <br><br>
+      On your special day, I hope the universe wraps you in the same warmth and tenderness you give so effortlessly to everyone around you. May this year bring you endless happiness, good health, and every little thing that makes your heart dance. 🎶
+      <br><br>
+     Btw return kab ha? 🎂✨
+      <br><br>
+      With all my love and the biggest virtual hug from me and family, 💗
+    </p>
+
+    <div class="footer-sparkles">
+      <span class="sp1">✨</span>
+      <span class="sp2">💫</span>
+      <span class="sp3">✨</span>
+    </div>
+  </div>
+
+</body>
+</html>
